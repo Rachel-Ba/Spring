@@ -12,10 +12,19 @@ import java.util.Scanner;
 
 public class AppSpringXML
 {
-  public static void main(String[] args) 
-  {
+	  public static void main(String[] args) 
+	  {
+	  // Création du contexte Spring
 	  ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application-config-memoire.xml");
-	  Scanner scanner = context.getBean(Scanner.class);
+	  
+	  // récupération du bean Menu
+	  Menu menu = context.getBean(Menu.class);
+	  menu.afficher();
+	  
+	  // fermeture du Scanner
+	  context.getBean(Scanner.class).close();
+	  
+	  // fermeture du contexte Spring
 	  context.close();
-  }
-}
+	  }
+	}
