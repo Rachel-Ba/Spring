@@ -12,17 +12,13 @@
   Il est créé à partir de la classe "java.util.Scanner"  -->
   
   		<import resource="application-config-common.xml"></import>
-  
-	  <bean id="scanner" class="java.util.Scanner">
-	  <constructor-arg>
-	  <!-- Référencement du champ static "System.in" -->
-	  		<util:constant static-field="java.lang.System.in"></util:constant>
-	  </constructor-arg>
-	  </bean>
-	  
-	  
-	  
-	  <bean id="dao" class="dev.dao.PlatDaoMemoire"></bean>
+  		
+  		 <bean id="dao" class="dev.dao.PlatDaoFichier">
+  		 		<constructor-arg name="fichierStockage"
+  		 						value="C:\Users\Dell\git\demo-spring\restaurant-console-app\restaurant.txt">
+  		 		</constructor-arg>
+  		 
+  		 </bean>
 	  
 	  
 	  
